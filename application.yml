@@ -17,7 +17,7 @@ proxy:
       groups: mathematicians
   specs:
     - id: shiny-r2u-demo
-      display-name: Shiny with r2u Demo Application
+      display-name: Shiny using r2u Demo Application
       container-image: openanalytics/shinyproxy-shiny-r2u-demo
 
 logging:

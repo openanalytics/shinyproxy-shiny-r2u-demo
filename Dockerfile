@@ -1,17 +1,15 @@
 FROM rocker/r2u:jammy
 
-RUN apt-get update 
+# important: path does not contain "local" (/usr/local/lib/R/etc/) in contrast to the other demos
+RUN echo "\noptions(shiny.port=3838, shiny.host='0.0.0.0')" >> /usr/lib/R/etc/Rprofile.site
 
-RUN R -q -e 'install.packages(c("BiocManager", "shiny"))'
-RUN R -q -e 'BiocManager::install(c("GenomicRanges", "Gviz"))'
+# no need to install system libraries
+RUN R -q -e 'install.packages(c("shiny", "Rmpfr"))'
 
-# copy necessary files
-COPY Rprofile.site /usr/lib/R/etc/
-## app folder
-COPY /shinyApp ./app
+# install R code
+COPY euler /build/euler
+RUN R CMD INSTALL /build/euler
 
-# expose port
 EXPOSE 3838
 
-# run app on container start
-CMD ["R", "-e", "shiny::runApp('/app', host = '0.0.0.0', port = 3838)"]
+CMD ["R", "-q", "-e", "euler::runShiny()"]
