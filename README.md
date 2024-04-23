@@ -5,8 +5,8 @@ using [r2u](https://eddelbuettel.github.io/r2u/) inside ShinyProxy.
 
 Related demos:
 
-- [plain Shiny demo](https://github.com/openanalytics/shinyproxy-demo)
-- [plain Shiny demo (no R package)](https://github.com/openanalytics/shinyproxy-demo-minimal)
+- [plain Shiny demo](https://github.com/openanalytics/shinyproxy-shiny-demo)
+- [plain Shiny demo (no R package)](https://github.com/openanalytics/shinyproxy-shiny-demo-minimal)
 - [Shiny demo using pak](https://github.com/openanalytics/shinyproxy-shiny-pak-demo)
 - [Shiny demo using renv](https://github.com/openanalytics/shinyproxy-shiny-renv-demo)
 
@@ -18,7 +18,7 @@ To pull the image made in this repository from Docker Hub, use
 sudo docker pull openanalytics/shinyproxy-shiny-r2u-demo
 ```
 
-the relevant Docker Hub repository can be found at https://hub.docker.com/r/openanalytics/shinyproxy-shiny-r2u-demo
+the relevant Docker Hub repository can be found at <https://hub.docker.com/r/openanalytics/shinyproxy-shiny-r2u-demo>.
 
 To build the image from the Dockerfile, clone this repository, then navigate to its root directory and run
 
@@ -37,7 +37,7 @@ specs:
     container-image: openanalytics/shinyproxy-shiny-r2u-demo
 ```
 
-# References
+## References
 
 - [ShinyProxy.io](https://shinyproxy.io/)
 - [All demos](https://shinyproxy.io/documentation/demos/)
